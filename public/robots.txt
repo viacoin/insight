@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /blocks
+Disallow: /tx/
+Disallow: /address/
+Disallow: /status
+
+User-agent: ia-archiver
+Disallow: /
+
