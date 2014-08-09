@@ -1,7 +1,31 @@
 'use strict';
 
 angular.module('insight.transactions').controller('transactionsController',
+
 function($scope, $rootScope, $routeParams, $location, Global, Transaction, TransactionsByBlock, TransactionsByAddress) {
+  function parseViaAsm(pubkey) {
+      if (!pubkey.hasOwnProperty('asm') || pubkey.asm.indexOf('OP_RETURN 434c524e47485358') != 0) {
+        return "[ Unparsed address ]";
+      }
+      rv = "ClearingHouse";
+      sfx = pubkey.asm.substring(26, 34);
+      switch (sfx) {
+        case '00000028': sfx = ' Bet'; break;
+        case '0000001e': sfx = ' Broadcast'; break;
+        case '0000000b': sfx = ' ViaPay'; break;
+        case '0000003c': sfx = ' Burn'; break;
+        case '00000015': sfx = ' Callback'; break;
+        case '00000046': sfx = ' Cancel'; break;
+        case '00000032': sfx = ' Dividend'; break;
+        case '00000014': sfx = ' Issue'; break;
+        case '0000000a': sfx = ' Order'; break;
+        case '00000064': sfx = ' Publish'; break;
+        case '00000050': sfx = ' RPS'; break;
+        case '00000051': sfx = ' RPS Resolve'; break;
+        case '00000000': sfx = ' Send'; break;
+      }
+      return rv + sfx + '';
+  }
   $scope.global = Global;
   $scope.loading = false;
   $scope.loadedBy = null;
@@ -31,7 +55,7 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
 
       // non standard output
       if (items[i].scriptPubKey && !items[i].scriptPubKey.addresses) {
-        items[i].scriptPubKey.addresses = ['Unparsed address [' + u++ + ']'];
+        items[i].scriptPubKey.addresses = [parseViaAsm(items[i].scriptPubKey)];
         items[i].notAddr = true;
         notAddr = true;
       }
