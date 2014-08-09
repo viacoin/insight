@@ -114,7 +114,7 @@ margin-left: 0;
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {background-color: #373D42;}
 
 .navbar-default {
-  background-color: #8DC429;
+  background-color: #000000;
   margin: 0;
   border: 0;
 }
@@ -352,7 +352,7 @@ margin-left: 0;
   border-radius: 2px;
 }
 .btn-primary {
-  background-color: #8DC429;
+  background-color: #000000;
   border: 2px solid #76AF0F;
 }
 
@@ -406,7 +406,7 @@ margin-left: 0;
 }
 
 .txvalues-primary {
-  background-color: #8DC429;
+  background-color: #000000;
 }
 
 .txvalues-default {
@@ -429,7 +429,7 @@ margin-left: 0;
   font-size: 14px;
   font-weight: normal;
 }
-.progress-bar-info { background-color: #8DC429; }
+.progress-bar-info { background-color: #000000; }
 
 /* Set the fixed height of the footer here */
 #footer {
