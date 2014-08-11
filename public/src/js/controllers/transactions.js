@@ -4,7 +4,7 @@ angular.module('insight.transactions').controller('transactionsController',
 
 function($scope, $rootScope, $routeParams, $location, Global, Transaction, TransactionsByBlock, TransactionsByAddress) {
   function parseViaAsm(pubkey) {
-      if (!pubkey.hasOwnProperty('asm') || pubkey.asm.indexOf('OP_RETURN 434c524e47485358') != 0) {
+      if (!pubkey.hasOwnProperty('asm') || pubkey.asm.indexOf('OP_RETURN 58434c524e474853') != 0) {
         return "[ Unparsed address ]";
       }
       rv = "ClearingHouse";
