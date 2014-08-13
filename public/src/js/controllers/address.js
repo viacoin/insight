@@ -33,6 +33,10 @@ angular.module('insight.address').controller('AddressController',
         function(address) {
           $rootScope.titleDetail = address.addrStr.substring(0, 7) + '...';
           $rootScope.flashMessage = null;
+          if (address.addrStr == 'Via2XCHoqQxACVuXf4vrajVDJetwVgxLMz')
+            $scope.flashMessage = 'This is the ClearingHouse burning address. Do not send Viacoins here directy or they will be lost.';
+          else
+            $scope.flashMessage = null;
           $scope.address = address;
         },
         function(e) {
