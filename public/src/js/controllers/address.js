@@ -34,7 +34,7 @@ angular.module('insight.address').controller('AddressController',
           $rootScope.titleDetail = address.addrStr.substring(0, 7) + '...';
           $rootScope.flashMessage = null;
           if (address.addrStr == 'Via2XCHoqQxACVuXf4vrajVDJetwVgxLMz')
-            $scope.flashMessage = 'This is the ClearingHouse XCH fire-sale burn address. Do not send Viacoins here directy or they will be lost. Visit https://clearwallet.co/ to participate.';
+            $scope.flashMessage = 'This is the ClearingHouse XCH fire-sale address. Do not send Viacoins here directy or you will not receive XCH in return. Visit https://clearwallet.co/ to participate.';
           else
             $scope.flashMessage = null;
           $scope.address = address;
