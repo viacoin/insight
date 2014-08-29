@@ -10,6 +10,8 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
       rv = "ClearingHouse";
       sfx = pubkey.asm.substring(26, 34);
       switch (sfx) {
+        case '000000a0': sfx = ' Notary'; break;
+        case '000000a1': sfx = ' Notary Transfer'; break;
         case '00000028': sfx = ' Bet'; break;
         case '0000001e': sfx = ' Broadcast'; break;
         case '0000000b': sfx = ' ViaPay'; break;
